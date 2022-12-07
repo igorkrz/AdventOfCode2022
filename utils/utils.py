@@ -5,8 +5,8 @@ import re
 
 class Utils(object, metaclass=ABCMeta):
 
-    input = None
-    custom_input = None
+    _input = None
+    _custom_input = None
 
     @abstractmethod
     def __init__(self):
