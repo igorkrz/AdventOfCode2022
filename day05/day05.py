@@ -1,4 +1,4 @@
-from utils.utils import Utils, DayPart
+from utils.utils import Utils, Day
 import re
 
 
@@ -11,7 +11,7 @@ class Day5(Utils):
 
         for line in self.input:
             crates = self.__split_to_columns(line, crates)
-            crates = self.__move_crates(line, crates, DayPart.part_one)
+            crates = self.__move_crates(line, crates, Day.part_one)
 
         return self.__get_result(crates)
 
@@ -20,7 +20,7 @@ class Day5(Utils):
 
         for line in self.input:
             crates = self.__split_to_columns(line, crates)
-            crates = self.__move_crates(line, crates, DayPart.part_two)
+            crates = self.__move_crates(line, crates, Day.part_two)
 
         return self.__get_result(crates)
 
@@ -47,13 +47,14 @@ class Day5(Utils):
             column_from = command[1]
             column_to = command[2]
 
-            if part == DayPart.part_one:
-                for _ in range(0, quantity):
-                    crate_to_move = crates[column_from].pop(0)
-                    crates[column_to].insert(0, crate_to_move)
-            else:
-                crates[column_to] = crates[column_from][0:quantity] + crates[column_to]
-                del crates[column_from][0:quantity]
+            match part:
+                case Day.part_one:
+                    for _ in range(0, quantity):
+                        crate_to_move = crates[column_from].pop(0)
+                        crates[column_to].insert(0, crate_to_move)
+                case Day.part_two:
+                    crates[column_to] = crates[column_from][0:quantity] + crates[column_to]
+                    del crates[column_from][0:quantity]
 
         return crates
 

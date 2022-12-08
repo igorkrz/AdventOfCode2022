@@ -29,7 +29,7 @@ class Utils(object, metaclass=ABCMeta):
         return [item for sublist in list_to_flatten for item in sublist]
 
 
-class DayPart(Enum):
+class Day(Enum):
     part_one = 1
     part_two = 2
 
