@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from enum import Enum
 import os
 import re
 
@@ -26,4 +27,9 @@ class Utils(object, metaclass=ABCMeta):
 
     def flatten(self, list_to_flatten):
         return [item for sublist in list_to_flatten for item in sublist]
+
+
+class DayPart(Enum):
+    part_one = 1
+    part_two = 2
 

@@ -27,8 +27,3 @@ class Day1(Utils):
                 result = 0
 
         return sum(sorted(results, reverse=True)[:3])
-
-
-day1 = Day1()
-print(day1.part_one())
-print(day1.part_two())
