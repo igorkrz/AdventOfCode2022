@@ -2,7 +2,7 @@ from day03.day03 import Day3
 import unittest
 
 
-class TestDay2(unittest.TestCase):
+class TestDay3(unittest.TestCase):
 
     def test_solutions(self):
         day3 = Day3()
